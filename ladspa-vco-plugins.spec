@@ -6,10 +6,10 @@ Version:	0.2.1
 Release:	1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
+Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
 # Source0-md5:	751c94bd95e4f76ea09ff37320ed8ba8
 Patch0:		%{name}-misc_fixes.patch
-URL:		http://alsamodular.sourceforge.net/
+URL:		http://users.skynet.be/solaris/linuxaudio/
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
 Requires:	ladspa-common
