@@ -1,6 +1,6 @@
-diff -aurN VCO-plugins-0.2.1.orig/ladspaplugin.h VCO-plugins-0.2.1/ladspaplugin.h
---- VCO-plugins-0.2.1.orig/ladspaplugin.h	2003-12-01 21:18:34.000000000 +0100
-+++ VCO-plugins-0.2.1/ladspaplugin.h	2004-01-08 19:40:38.194364192 +0100
+diff -aurN VCO-plugins-0.3.0.orig/ladspaplugin.h VCO-plugins-0.3.0/ladspaplugin.h
+--- VCO-plugins-0.3.0.orig/ladspaplugin.h	2003-12-01 21:18:34.000000000 +0100
++++ VCO-plugins-0.3.0/ladspaplugin.h	2004-04-28 17:21:21.474507136 +0200
 @@ -21,7 +21,7 @@
  #define __LADSPAPLUGIN_H
  
@@ -10,15 +10,24 @@ diff -aurN VCO-plugins-0.2.1.orig/ladspaplugin.h VCO-plugins-0.2.1/ladspaplugin.
  
  
  
-diff -aurN VCO-plugins-0.2.1.orig/Makefile VCO-plugins-0.2.1/Makefile
---- VCO-plugins-0.2.1.orig/Makefile	2003-12-06 22:24:35.000000000 +0100
-+++ VCO-plugins-0.2.1/Makefile	2004-01-08 19:40:55.854679416 +0100
-@@ -10,7 +10,7 @@
+diff -aurN VCO-plugins-0.3.0.orig/Makefile VCO-plugins-0.3.0/Makefile
+--- VCO-plugins-0.3.0.orig/Makefile	2004-04-12 14:02:33.000000000 +0200
++++ VCO-plugins-0.3.0/Makefile	2004-04-28 17:22:26.162673040 +0200
+@@ -1,5 +1,5 @@
+ 
+-CPPFLAGS += -I. -fPIC -D_REENTRANT -Wall -O3
++CPPFLAGS += -I. -fPIC -D_REENTRANT -Wall
+ 
+ 
+ blvco.so:	blvco.o blvco_if.o exp2ap.o
+@@ -10,8 +10,8 @@
  
  
  install:
--	/bin/cp  *.so /usr/lib/ladspa
-+	/bin/cp  *.so $(DESTDIR)/usr/lib/ladspa
+-	/bin/cp  blvco.so /usr/lib/ladspa
+-	/bin/cp  blvco.so /usr/lib/ladspa/vco_sawpulse.so
++	/bin/cp  blvco.so $(DESTDIR)/usr/lib/ladspa
++	/bin/cp  blvco.so $(DESTDIR)/usr/lib/ladspa/vco_sawpulse.so
  
  
  DIR := $(shell basename `pwd`)
