@@ -29,6 +29,7 @@ pasmowo VCO.
 
 %build
 %{__make} \
+	CXX="%{__cxx}" \
 	CPPFLAGS="-I. -fPIC -D_REENTRANT -Wall %{rpmcflags}"
 
 %install
@@ -36,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/ladspa
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT install
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
