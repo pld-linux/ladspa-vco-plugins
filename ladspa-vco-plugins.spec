@@ -1,0 +1,47 @@
+%define		_name VCO-plugins
+Summary:	Bandlimited VCO LADSPA plugin
+Summary(pl):	Wtyczka LADSPA - ograniczany pasmowo VCO
+Name:		ladspa-vco-plugins
+Version:	0.2.1
+Release:	1
+License:	GPL
+Group:		Applications/Sound
+Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
+# Source0-md5:	751c94bd95e4f76ea09ff37320ed8ba8
+Patch0:		%{name}-misc_fixes.patch
+URL:		http://alsamodular.sourceforge.net/
+BuildRequires:	ladspa-devel
+BuildRequires:	libstdc++-devel
+Requires:	ladspa-common
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%description
+This LADSPA plugin contains a digital implementation of the
+bandlimited VCO.
+
+%description -l pl
+Ta wtyczka LADSPA zawiera cyfrow± implementacjê ograniczanego
+pasmowo VCO.
+
+%prep
+%setup -q -n %{_name}-%{version}
+%patch0 -p1
+
+%build
+%{__make} \
+	CPPFLAGS="-I. -fPIC -D_REENTRANT -Wall %{rpmcflags}"
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_libdir}/ladspa
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT install
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files
+%defattr(644,root,root,755)
+%doc AUTHORS README
+%attr(755,root,root) %{_libdir}/ladspa/*.so
