@@ -1,6 +1,6 @@
 %define		_name VCO-plugins
 Summary:	Bandlimited VCO LADSPA plugin
-Summary(pl.UTF-8):   Wtyczka LADSPA - ograniczany pasmowo VCO
+Summary(pl.UTF-8):	Wtyczka LADSPA - ograniczany pasmowo VCO
 Name:		ladspa-vco-plugins
 Version:	0.3.0
 Release:	2
