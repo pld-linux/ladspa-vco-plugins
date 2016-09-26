@@ -4,8 +4,9 @@ Summary(pl.UTF-8):	Wtyczka LADSPA - ograniczany pasmowo VCO
 Name:		ladspa-vco-plugins
 Version:	0.3.0
 Release:	2
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Sound
+# http://users.skynet.be/solaris/linuxaudio/getit.html
 Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
 # Source0-md5:	6fdf4a7e3c716abbb89721645427cd52
 Patch0:		%{name}-misc_fixes.patch
@@ -46,4 +47,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README
-%attr(755,root,root) %{_libdir}/ladspa/*.so
+%attr(755,root,root) %{_libdir}/ladspa/blvco.so
+%attr(755,root,root) %{_libdir}/ladspa/vco_sawpulse.so
