@@ -6,11 +6,10 @@ Version:	0.3.0
 Release:	2
 License:	GPL v2+
 Group:		Applications/Sound
-# http://users.skynet.be/solaris/linuxaudio/getit.html
-Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
+Source0:	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
 # Source0-md5:	6fdf4a7e3c716abbb89721645427cd52
 Patch0:		%{name}-misc_fixes.patch
-URL:		http://users.skynet.be/solaris/linuxaudio/
+URL:		http://kokkinizita.linuxaudio.org/linuxaudio/ladspa/index.html
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
 Requires:	ladspa-common
